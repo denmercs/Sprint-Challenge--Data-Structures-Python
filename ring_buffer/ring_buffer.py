@@ -15,6 +15,16 @@ class RingBuffer:
         list_buffer_contents = []
 
         # TODO: Your code here
+        # set current node as head
+        current_node = self.storage.head
+
+        while current_node.next is not None:
+            # add them to the lists
+            list_buffer_contents.append(current_node.value)
+            # set the pointer to the current node
+            current_node = current_node.next
+
+        list_buffer_contents.append(current_node.value)
 
         return list_buffer_contents
 
